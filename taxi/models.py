@@ -38,7 +38,6 @@ class Driver(AbstractUser):
         elif not self.license_number[3:].isdigit():
             raise ValidationError("The last 5 characters of the license"
                                   " number must be digits.")
-        return self.license_number
 
 
 class Car(models.Model):

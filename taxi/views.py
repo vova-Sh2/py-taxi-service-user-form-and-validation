@@ -30,6 +30,7 @@ def index(request):
     return render(request, "taxi/index.html", context=context)
 
 
+@login_required
 def toggle_assign_car(request, pk):
     car = get_object_or_404(Car, pk=pk)
     user = request.user
