@@ -31,7 +31,8 @@ class Driver(AbstractUser):
     def clean(self):
         if len(self.license_number) != 8:
             raise ValidationError("License_number must be 8 digits")
-        elif not self.license_number[:3].isupper() or not self.license_number[:3].isalpha():
+        elif (not self.license_number[:3].isupper()
+              or not self.license_number[:3].isalpha()):
             raise ValidationError("License_number must be uppercase")
         elif not self.license_number[3:].isdigit():
             raise ValidationError("License_number must be digits")
